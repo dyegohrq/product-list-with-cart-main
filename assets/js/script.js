@@ -103,12 +103,8 @@ let product = [
      }
 ]
 
-
-function addCart() {
-    container()
-}
-
 function container() {
+    
     const container = document.createElement('div')
     container.classList = 'container'
 
@@ -122,11 +118,9 @@ function container() {
 
         const product = document.createElement('div')
         product.classList = 'product'
-
+               
         const imgCart = document.createElement('div')
         imgCart.classList = 'img_cart'
-        imgCart.style.backgroundImage = `url="${item.image.mobile}"`
-                
         product.appendChild(imgCart)
 
         const button = document.createElement('button')
@@ -136,24 +130,10 @@ function container() {
         section.appendChild(product)
         container.appendChild(section)
 
-        console.log(item)
+        // console.log(item)
     })
-    
+
     body.prepend(container)
 }
 
-function verificarTamanhoTela(e) {
-    if (e.matches) {
-        console.log("A tela agora tem 768px ou menos!");
-    } else {
-        console.log("A tela agora tem mais de 768px!");
-    }
-}
-
-let mediaQuery = window.matchMedia("(max-width: 768px)");
-mediaQuery.addEventListener("change", verificarTamanhoTela); // Observa mudanças
-verificarTamanhoTela(mediaQuery); // Verifica no carregamento
-
-
-
-addCart()
+container()
