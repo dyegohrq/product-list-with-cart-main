@@ -1,0 +1,81 @@
+:root {
+    /* Colors */
+    --red: #c73b0f;
+
+    /* Rose */
+    --rose-900: #260f08;
+    --rose-500: #87635a;
+    --rose-400: #ad8a85;
+    --rose-300: #caafa7;
+    --rose-100: #f5eeec;
+    --rose-50: #fcf8f6;
+
+    /* Green */
+    --green: #1ea575;
+
+    /* Black and white */
+    --black: #000;
+    --white: #fff;
+
+    /* Typography */
+    --font-red: "Red Hat Text", serif;
+}
+
+/* General confing */
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: var(--font-red);
+    background-color: var(--rose-50);
+}
+
+/* 
+    bold - 700;
+    semiBold - 600;
+    regular - 400;
+*/
+
+/* Text-present */
+.text-present-1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+}
+
+.text-present-2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0px;
+}
+
+.text-present-3 {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+
+.text-present-4 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0;
+}
+
+.text-present-4-bold {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0px;
+}
+
+/* Buttons */
