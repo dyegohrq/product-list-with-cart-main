@@ -103,8 +103,7 @@ let product = [
      }
 ]
 
-function container() {
-    
+function container() {    
     const container = document.createElement('div')
     container.classList = 'container'
 
@@ -113,25 +112,42 @@ function container() {
     container.appendChild(h1)
 
     product.map((item) => {
-        const section = document.createElement('section')
-        section.classList = 'product_cart'
+
+        const productCart = document.createElement('section')
+        productCart.classList = 'product_cart'
+        container.appendChild(productCart)
 
         const product = document.createElement('div')
         product.classList = 'product'
+        productCart.appendChild(product)
                
         const imgCart = document.createElement('div')
-        imgCart.classList = 'img_cart'
+        imgCart.classList = `img_cart ${formattedName(item)}`
         product.appendChild(imgCart)
 
         const button = document.createElement('button')
         product.appendChild(button)
         button.innerHTML = '<i><img src="assets/images/icon-add-to-cart.svg" alt=""></i> Add to cart'
 
-        section.appendChild(product)
-        container.appendChild(section)
+        const productDescription = document.createElement('div')
+        productDescription.classList = 'product_description'
+        productCart.appendChild(productDescription)
+
+        const category = document.createElement('small')
+        category.classList = 'category';
+        category.innerHTML = item.category
+        productDescription.appendChild()
+
+        console.log(item)
 
         // console.log(item)
     })
+
+    function formattedName(item) {
+        let name = item.name.split(' ')[1].toLowerCase()
+
+        return name
+    }
 
     body.prepend(container)
 }

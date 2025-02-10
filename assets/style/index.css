@@ -79,3 +79,42 @@ body {
 }
 
 /* Buttons */
+
+
+
+/* img product */
+.img_cart {
+    width: 327px;
+    height: 212px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.with {
+    background-image: url(../images/image-waffle-mobile.jpg);
+}
+.bean {
+    background-image: url(../images/image-creme-brulee-mobile.jpg);
+}
+.mix {
+    background-image: url(../images/image-macaron-mobile.jpg);
+}
+.tiramisu {
+    background-image: url(../images/image-tiramisu-mobile.jpg);
+}
+.baklava {
+    background-image: url(../images/image-baklava-mobile.jpg);
+}
+.meringue {
+    background-image: url(../images/image-meringue-mobile.jpg);
+}
+.velvet {
+    background-image: url(../images/image-cake-mobile.jpg);
+}
+.caramel {
+    background-image: url(../images/image-brownie-mobile.jpg);
+}
+.panna {
+    background-image: url(../images/image-panna-cotta-mobile.jpg);
+}
