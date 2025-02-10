@@ -19,6 +19,8 @@
 
     /* Typography */
     --font-red: "Red Hat Text", serif;
+
+    --padding-mobile: 24px;
 }
 
 /* General confing */
@@ -30,10 +32,11 @@
 }
 
 body {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     font-family: var(--font-red);
     background-color: var(--rose-50);
+    padding: var(--padding-mobile);
 }
 
 /* 
@@ -81,6 +84,15 @@ body {
 /* Buttons */
 
 
+/* Container */
+.container h1 {
+    color: var(--rose-900);
+}
+
+.container .product_contant {
+    display: grid;
+    gap: 24px;
+}
 
 /* img product */
 .img_cart {
@@ -117,4 +129,74 @@ body {
 }
 .panna {
     background-image: url(../images/image-panna-cotta-mobile.jpg);
+}
+
+@media screen and (min-width: 768px) {
+    .img_cart {
+        width: 213px;
+        height: 212px;
+    }
+
+    .with {
+        background-image: url(../images/image-waffle-tablet.jpg);
+    }
+    .bean {
+        background-image: url(../images/image-creme-brulee-tablet.jpg);
+    }
+    .mix {
+        background-image: url(../images/image-macaron-tablet.jpg);
+    }
+    .tiramisu {
+        background-image: url(../images/image-tiramisu-tablet.jpg);
+    }
+    .baklava {
+        background-image: url(../images/image-baklava-tablet.jpg);
+    }
+    .meringue {
+        background-image: url(../images/image-meringue-tablet.jpg);
+    }
+    .velvet {
+        background-image: url(../images/image-cake-tablet.jpg);
+    }
+    .caramel {
+        background-image: url(../images/image-brownie-tablet.jpg);
+    }
+    .panna {
+        background-image: url(../images/image-panna-cotta-tablet.jpg);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .img_cart {
+        width: 250px;
+        height: 240px;
+    }
+
+    .with {
+        background-image: url(../images/image-waffle-desktop.jpg);
+    }
+    .bean {
+        background-image: url(../images/image-creme-brulee-desktop.jpg);
+    }
+    .mix {
+        background-image: url(../images/image-macaron-desktop.jpg);
+    }
+    .tiramisu {
+        background-image: url(../images/image-tiramisu-desktop.jpg);
+    }
+    .baklava {
+        background-image: url(../images/image-baklava-desktop.jpg);
+    }
+    .meringue {
+        background-image: url(../images/image-meringue-desktop.jpg);
+    }
+    .velvet {
+        background-image: url(../images/image-cake-desktop.jpg);
+    }
+    .caramel {
+        background-image: url(../images/image-brownie-desktop.jpg);
+    }
+    .panna {
+        background-image: url(../images/image-panna-cotta-desktop.jpg);
+    }
 }

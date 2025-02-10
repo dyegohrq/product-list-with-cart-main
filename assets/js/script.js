@@ -108,14 +108,18 @@ function container() {
     container.classList = 'container'
 
     const h1 = document.createElement('h1')
+    h1.classList = 'text-present-1'
     h1.innerText = 'Desserts'
     container.appendChild(h1)
 
-    product.map((item) => {
+    const productContant = document.createElement('div')
+    productContant.classList = 'product_contant'
+    container.appendChild(productContant)
 
+    product.map((item) => {
         const productCart = document.createElement('section')
         productCart.classList = 'product_cart'
-        container.appendChild(productCart)
+        productContant.appendChild(productCart)
 
         const product = document.createElement('div')
         product.classList = 'product'
@@ -136,9 +140,19 @@ function container() {
         const category = document.createElement('small')
         category.classList = 'category';
         category.innerHTML = item.category
-        productDescription.appendChild()
+        productDescription.appendChild(category)
+        
+        const titleDescription = document.createElement('h2')
+        titleDescription.classList = 'title_description'
+        titleDescription.innerHTML = item.name
+        productDescription.appendChild(titleDescription)
 
-        console.log(item)
+        const price = document.createElement('span')
+        price.classList = 'price'
+        price.innerHTML = formattedPrice(item.price)
+        productDescription.appendChild(price)
+
+        // console.log(item)
 
         // console.log(item)
     })
@@ -147,6 +161,16 @@ function container() {
         let name = item.name.split(' ')[1].toLowerCase()
 
         return name
+    }
+
+    function formattedPrice(price) {
+        let formattedNumber = price.toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+        })
+
+        console.log(formattedNumber)
+        return formattedNumber
     }
 
     body.prepend(container)
