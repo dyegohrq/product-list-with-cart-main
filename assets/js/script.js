@@ -130,8 +130,14 @@ function container() {
         product.appendChild(imgCart)
 
         const button = document.createElement('button')
-        product.appendChild(button)
+        button.classList = 'button button-add text-present-4-bold'
         button.innerHTML = '<i><img src="assets/images/icon-add-to-cart.svg" alt=""></i> Add to cart'
+        product.appendChild(button)
+
+        const buttonActive = document.createElement('button')
+        buttonActive.innerHTML = '<i><img src="assets/images/icon-decrement-quantity.svg" alt=""></i> <span>1</span> <i><img src="assets/images/icon-increment-quantity.svg" alt=""></i>'
+        buttonActive.classList = 'button button-active text-present-4-bold'
+        product.appendChild(buttonActive)
 
         const productDescription = document.createElement('div')
         productDescription.classList = 'product_description'
@@ -153,8 +159,6 @@ function container() {
         productDescription.appendChild(price)
 
         // console.log(item)
-
-        // console.log(item)
     })
 
     function formattedName(item) {
@@ -169,9 +173,14 @@ function container() {
             currency: 'USD'
         })
 
-        console.log(formattedNumber)
         return formattedNumber
     }
+
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('button-add')) {
+            
+        }
+    })
 
     body.prepend(container)
 }
