@@ -137,7 +137,7 @@ function container() {
         product.appendChild(button)
 
         const buttonActive = document.createElement('button')
-        buttonActive.innerHTML = '<i><img src="assets/images/icon-decrement-quantity.svg" alt=""></i> <span>1</span> <i><img src="assets/images/icon-increment-quantity.svg" alt=""></i>'
+        buttonActive.innerHTML = '<i class="decrement" ><img src="assets/images/icon-decrement-quantity.svg" alt=""></i> <span class="quantity" ></span> <i class="increment"><img src="assets/images/icon-increment-quantity.svg" alt=""></i>'
         buttonActive.classList = 'button button-active text-present-4-bold'
         product.appendChild(buttonActive)
 
