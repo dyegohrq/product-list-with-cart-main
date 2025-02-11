@@ -1,6 +1,7 @@
 const body = document.querySelector('body')
 
 
+
 let product = [
     {
        'image': {
@@ -114,6 +115,7 @@ function container() {
 
     const productContant = document.createElement('div')
     productContant.classList = 'product_contant'
+    productContant.id = 'product_contant'
     container.appendChild(productContant)
 
     product.map((item) => {
@@ -144,21 +146,19 @@ function container() {
         productCart.appendChild(productDescription)
 
         const category = document.createElement('small')
-        category.classList = 'category';
+        category.classList = 'category text-present-4';
         category.innerHTML = item.category
         productDescription.appendChild(category)
         
         const titleDescription = document.createElement('h2')
-        titleDescription.classList = 'title_description'
+        titleDescription.classList = 'title_description text-present-3'
         titleDescription.innerHTML = item.name
         productDescription.appendChild(titleDescription)
 
         const price = document.createElement('span')
-        price.classList = 'price'
+        price.classList = 'price text-present-3'
         price.innerHTML = formattedPrice(item.price)
         productDescription.appendChild(price)
-
-        // console.log(item)
     })
 
     function formattedName(item) {
@@ -176,13 +176,6 @@ function container() {
         return formattedNumber
     }
 
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('button-add')) {
-            
-        }
-    })
-
     body.prepend(container)
 }
-
 container()
