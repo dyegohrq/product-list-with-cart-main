@@ -1,6 +1,5 @@
+import { productAdd } from "./funcionalit"
 const body = document.querySelector('body')
-
-
 
 let product = [
     {
@@ -159,6 +158,8 @@ function container() {
         price.classList = 'price text-present-3'
         price.innerHTML = formattedPrice(item.price)
         productDescription.appendChild(price)
+
+        productAdd(item)
     })
 
     function formattedName(item) {
@@ -168,7 +169,8 @@ function container() {
     }
 
     function formattedPrice(price) {
-        let formattedNumber = price.toLocaleString('en-US', {
+        let priceNumber = Number(price)
+        let formattedNumber = priceNumber.toLocaleString('en-US', {
             style: 'currency',
             currency: 'USD'
         })

@@ -158,6 +158,11 @@ body {
 
 .container .product_contant .product_cart .product .button-active i {
     cursor: pointer;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container .product_contant .product_cart .product_description{
