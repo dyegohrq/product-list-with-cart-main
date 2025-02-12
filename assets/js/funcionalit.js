@@ -1,7 +1,6 @@
 function funcionalit() {
     const productCart = document.querySelectorAll('.product_cart')
     let numberQtn = 1
-    let listProduct = []
 
     productCart.forEach((item) => { // Feito um forEach para pegar cada section
         const buttons = item.querySelectorAll('.button-add') // selecionei cada button com a section
@@ -10,7 +9,7 @@ function funcionalit() {
         // console.log(item)
 
         buttons.forEach((button) => { // peguei cada button
-        button.addEventListener('click', () => { // e adicionei um event listener
+            button.addEventListener('click', () => { // e adicionei um event listener
                 const section = button.closest('section')
                 const titleDescription = section.querySelector('.title_description ')
                 const priceDescription = section.querySelector('.price ')
@@ -21,12 +20,8 @@ function funcionalit() {
                     btnActive.style.display = 'flex'
                 })
 
-                function productAdd(item) {
-                    
-                }
+                console.log(button)
             })
-
-        
         })
 
         buttonActive.forEach(btnActive => {
@@ -65,9 +60,3 @@ function funcionalit() {
         })
     })
 }
-
-export function productAdd(item) {
-    console.log(item)
-}
-
-productAdd()
