@@ -10,19 +10,15 @@ function funcionalit() {
 
         buttons.forEach((button) => { // peguei cada button
             button.addEventListener('click', () => { // e adicionei um event listener
-                const section = button.closest('section')
-                const titleDescription = section.querySelector('.title_description ')
-                const priceDescription = section.querySelector('.price ')
-
                 button.classList.add('active_button') // adicionei a class
                 
                 buttonActive.forEach(btnActive => { // e em cada button active dei um display flex
                     btnActive.style.display = 'flex'
                 })
-
-                console.log(button)
             })
         })
+
+        console.log(item)
 
         buttonActive.forEach(btnActive => {
             const increment = btnActive.querySelectorAll('.increment')
