@@ -178,3 +178,26 @@ function container() {
     body.prepend(container)
 }
 container()
+
+
+
+const sections = document.querySelectorAll("section");
+let quantityValue = 1
+
+sections.forEach((item) => {
+    const buttonAdd = item.querySelector('.button-add')
+    const buttonAct = item.querySelector('.button-active')
+
+    buttonAdd.addEventListener('click', () => {
+        buttonAdd.style.display = 'none'
+        buttonAct.style.display = 'flex'
+    })  
+})
+
+const buttonAct = document.querySelectorAll('.button-active')
+
+buttonAct.forEach((btn) => {
+    const spanQuantity = btn.querySelector('.quantity')
+
+    spanQuantity.innerHTML = quantityValue
+})

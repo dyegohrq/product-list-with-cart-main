@@ -152,10 +152,6 @@ body {
     display: none;
 }
 
-.active_button {
-    display: none;
-}
-
 .container .product_contant .product_cart .product .button-active i {
     cursor: pointer;
     width: 20px;
