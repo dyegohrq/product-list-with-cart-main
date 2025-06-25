@@ -6,6 +6,11 @@ import { useState } from "react";
 
 export default function App() {
   const [product, setProduct] = useState<ItemProps[]>([])
+  const updateData = data.map((item: any )=> ({
+    ...item, 
+    amount: 0,
+    total: 0
+  }))
 
     function handleCLick(item: ItemProps ) {
         setProduct((productItem) => [...productItem, item])
@@ -22,7 +27,7 @@ export default function App() {
 
       <div className="lg:flex justify-around " >
         <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[70%] " >
-          {data.map((item) => (
+          {updateData.map((item) => (
             <div className=" pt-8 pb-6 " key={item.name} >
               <div className="relative flex flex-col items-center ">
                 <div className=" rounded-lg overflow-hidden ">

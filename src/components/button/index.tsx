@@ -1,6 +1,7 @@
 import { LiaCartPlusSolid } from "react-icons/lia"
 import style from '../typography.module.css'
-import { useState } from "react"
+import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
+import { useState } from "react";
 
 interface ButtonProps{
     item: ItemProps;
@@ -17,9 +18,12 @@ export interface ItemProps {
     name: string;
     category: string;
     price: number;
+    amount: number;
+    total: number;
 }
 
 export function Button( {item, onClick}: ButtonProps ) {
+    const [activeButton, setActiveButton] = useState(false)
     
 
     return(
@@ -35,6 +39,11 @@ export function Button( {item, onClick}: ButtonProps ) {
                 Add to cart
                 </span>
             </button>
+            {/* <div className=" flex items-center justify-between bg-red py-3 px-7 w-full max-w-[163px] rounded-[999px] text-white absolute bottom-[-23px] " >
+                <button className=" hover:bg-white transition-all duration-500 hover:text-red rounded-full cursor-pointer " ><FiMinusCircle /></button>
+                <span className={`${style['text-present-4-bold']}`} >0</span>
+                <button className="hover:bg-white transition-all duration-500 hover:text-red rounded-full cursor-pointer " ><FiPlusCircle /></button>
+            </div> */}
         </>
     )
 }
