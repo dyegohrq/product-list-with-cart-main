@@ -1,7 +1,7 @@
 import { LiaCartPlusSolid } from "react-icons/lia"
 import style from '../typography.module.css'
-import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
-import { useState } from "react";
+// import { FiMinusCircle, FiPlusCircle } from "react-icons/fi";
+// import { useState } from "react";
 
 interface ButtonProps{
     item: ItemProps;
@@ -23,7 +23,7 @@ export interface ItemProps {
 }
 
 export function Button( {item, onClick}: ButtonProps ) {
-    const [activeButton, setActiveButton] = useState(false)
+    // const [activeButton, setActiveButton] = useState(false)
     
 
     return(
