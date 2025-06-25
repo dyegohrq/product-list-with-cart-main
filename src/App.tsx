@@ -1,18 +1,27 @@
-import { LiaCartPlusSolid } from "react-icons/lia";
 import data from "../data.json";
 import style from "./components/typography.module.css";
 import illustration from '/assets/images/illustration-empty-cart.svg'
+import { Button, type ItemProps } from "./components/button";
+import { useState } from "react";
 
 export default function App() {
+  const [product, setProduct] = useState<ItemProps[]>([])
+
+    function handleCLick(item: ItemProps ) {
+        setProduct((productItem) => [...productItem, item])
+    }
+
+    console.log(product)
+
   return (
     <div className=" p-6 ">
-      <h1 className={` ${style["text-present-1"]} text-rose-900 `}>
+      <h1 className={` ${style["text-present-1"]} text-rose-900`}>
         {" "}
         Desserts{" "}
       </h1>
 
-      <div>
-        <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 " >
+      <div className="lg:flex justify-around " >
+        <div className=" grid grid-cols-1 sm:grid-cols-3 gap-6 lg:max-w-[70%] " >
           {data.map((item) => (
             <div className=" pt-8 pb-6 " key={item.name} >
               <div className="relative flex flex-col items-center ">
@@ -33,14 +42,7 @@ export default function App() {
                     alt={item.name}
                   />
                 </div>
-                <button className=" flex items-center gap-2 py-3 px-7 border border-rose-400 rounded-[999px] absolute bottom-[-23px] bg-white  ">
-                  <LiaCartPlusSolid className=" text-red text-[20px] " />
-                  <span
-                    className={`${style["text-present-4-bold"]} text-rose-900 `}
-                  >
-                    Add to cart
-                  </span>
-                </button>
+                <Button item={item} onClick={handleCLick} />
               </div>
               <div className=" mt-9 ">
                 <span className={`${style["text-present-4"]} text-rose-500  `}>
@@ -62,11 +64,11 @@ export default function App() {
             </div>
           ))}
         </div>
-        <div>
-          <h1>Your Cart (0)</h1>
-          <div>
-            <img src={illustration} alt="" />
-            <span>Your added items will appear here</span>
+        <div className=" my-8 p-6 lg:max-w-[30%] " >
+          <h1 className={`${style['text-present-2']} text-red `} >Your Cart (0)</h1>
+          <div className=" p-6 flex flex-col items-center gap-4 " >
+            <img src={illustration} alt="illustration-empty-cart" />
+            <span className={`${style['text-present-4-bold']} text-rose-500  `} >Your added items will appear here</span>
           </div>
         </div>
       </div>
