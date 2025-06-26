@@ -48,13 +48,13 @@ export function Button({ item, onClick, isAdded, onDecrease, onIncrease, amount 
         </div>
       ) : (
         <button
-          className=" flex items-center gap-2 py-3 px-7 border border-rose-400 rounded-[999px] absolute bottom-[-23px] bg-white cursor-pointer "
+          className=" flex items-center gap-2 py-3 px-7 border border-rose-400 hover:border-red text-rose-900 hover:text-red transition-all duration-500 rounded-[999px] absolute bottom-[-23px] bg-white cursor-pointer "
           onClick={() => {
             onClick(item);
           }}
         >
           <LiaCartPlusSolid className=" text-red text-[20px] " />
-          <span className={`${style["text-present-4-bold"]} text-rose-900 `}>
+          <span className={`${style["text-present-4-bold"]}`}>
             Add to cart
           </span>
         </button>
