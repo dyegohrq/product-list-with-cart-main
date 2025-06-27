@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import type { ItemProps } from "../button"
 import iconConfirmed from '/assets/images/icon-order-confirmed.svg'
 import style from '../typography.module.css'
