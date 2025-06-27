@@ -64,6 +64,11 @@ export default function App() {
     return found ? found.amount : 0;
   }
 
+  function closeModal() {
+    setProduct([])
+    setModalActive(false)
+  }
+
   
   return (
     <div className=" p-6 bg-rose-50 ">
@@ -203,7 +208,7 @@ export default function App() {
         </div>
       </div>
       {
-        modalActive && (<Modal item={product} isOpen={modalActive} onClose={() => setModalActive(false)} total={totalCart} />)
+        modalActive && (<Modal item={product} isOpen={modalActive} onClose={() => setModalActive(false)} total={totalCart} closeModal={closeModal} />)
       }
     </div>
   );
