@@ -5,6 +5,7 @@ import { Button, type ItemProps } from "./components/button";
 import { useState } from "react";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import iconCarbon from '/assets/images/icon-carbon-neutral.svg'
+import { Modal } from "./components/modal";
 
 export default function App() {
   const [product, setProduct] = useState<ItemProps[]>([]);
@@ -14,6 +15,7 @@ export default function App() {
     total: 0,
   }));
   const totalCart = product.reduce((acc, item) => acc + item.total, 0)
+  const [modalActive, setModalActive] = useState(false)
 
   function handleAddToCart(item: ItemProps) {
     const exists = product.some((p) => p.name === item.name);
@@ -62,9 +64,10 @@ export default function App() {
     return found ? found.amount : 0;
   }
 
+  
   return (
     <div className=" p-6 bg-rose-50 ">
-      <h1 className={` ${style["text-present-1"]} text-rose-900`}>
+      <h1 className={` ${style["text-present-1"]} text-rose-900 `}>
         {" "}
         Desserts{" "}
       </h1>
@@ -188,7 +191,10 @@ export default function App() {
                   <img src={iconCarbon} alt="icon-carbon-neutral" />
                   <p className={`${style['text-present-4']} text-rose-900 `} >This is a <span className={`${style['text-present-4-bold']}`} >carbon-neutral</span> delivery </p>
                 </div>
-                <button className={ ` ${style['text-present-3']} bg-red hover:bg-rose-900 transition-all duration-500 text-white w-full mt-6 py-4 flex items-center justify-center rounded-[999px] cursor-pointer ` } >
+                <button 
+                  className={ ` ${style['text-present-3']} bg-red hover:bg-rose-900 transition-all duration-500 text-white w-full mt-6 py-4 flex items-center justify-center rounded-[999px] cursor-pointer ` } 
+                  onClick={() => setModalActive(true)}  
+                >
                   Confirm Order
                 </button>
               </div>
@@ -196,6 +202,9 @@ export default function App() {
           </div>
         </div>
       </div>
+      {
+        modalActive && (<Modal item={product} isOpen={modalActive} onClose={() => setModalActive(false)} total={totalCart} />)
+      }
     </div>
   );
 }
